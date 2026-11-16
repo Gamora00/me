@@ -5,67 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css" rel="stylesheet" integrity="sha384-nWN3KqaaVcbEsCjLSV+2jMjh62Iny/+mN3srM8TZeM8N6aj7eDl5wwYggjAJ4/sJ" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Logo</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#about">About Me</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#contanct">Contanct</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#contanct">Projects</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-    </nav>
-<div class="container-fluid">
-   
-
-    <div class="hero">
-        <div class="intro">
-            <div>
-                <h1>Welcome, I'm</h1>
-                <h3>Jethro Almodiel</h3>
-                <p class="text-muted">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore iure amet sequi hic culpa provident neque architecto, minus cum. Vero perferendis voluptatem quod obcaecati aspernatur suscipit alias ipsa placeat nostrum.
-                </p>
-            </div>
-            <a href="#" class="getin">Get in touch</a>
-        </div>
-        <div class=" profile-container">
-            <img class="profile" src="https://jethroalmodiel.app/DSC_0112.JPG" alt="">
+<body id="home">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top site-nav" aria-label="Main navigation">
+    <div class="container site-nav-inner">
+        <a class="navbar-brand" href="#home" aria-label="Jethro Almodiel, home">
+            <span class="brand-mark" aria-hidden="true">JA</span>
+            Jethro Almodiel
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav gap-lg-2">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+            </ul>
+            <a class="getin" href="#contact">Get in touch</a>
         </div>
     </div>
-
-
-</div>
-
-<div class="contianer about-container" id="about">
+</nav>
+<section class="hero container" aria-labelledby="hero-title">
     <div>
-        <h1>About me</h1>
+        <p class="hero-role">Aspiring web developer</p>
+        <h1 id="hero-title">Jethro Almodiel</h1>
+        <p class="hero-description">
+            I enjoy building clean, responsive websites and turning ideas into useful web experiences.
+        </p>
+        <a href="#contact" class="getin">Get in touch</a>
     </div>
+    <img class="profile" src="https://jethroalmodiel.app/DSC_0112.JPG" alt="Portrait of Jethro Almodiel">
+</section>
 
-    <div class="about" >
+<section class="about-container container" id="about" aria-labelledby="about-title">
+    <div class="about">
+        <h2 id="about-title">About me</h2>
         <p>
-            Hi! I'm Jethro Almodiel, an aspiring web developer
-            who enjoys creating simple, clean, and user-friendly
-            websites. I am passionate about learning new technologies,
-            improving my coding skills, and turning ideas into
-            functional web experiences.
+            I'm Jethro Almodiel, a Computer Science student, aspiring software engineer, and young entrepreneur with a passion for technology, innovation, and turning ideas into reality. I enjoy challenging myself by building real-world solutions, from developing software applications to exploring artificial intelligence and creating systems that can make people's lives easier. As the founder of XIMO, I'm taking my first steps into entrepreneurship while continuously improving my skills in programming, leadership, and business. I've also had the opportunity to compete in hackathons, earn recognition for my projects, and share my knowledge with aspiring developers. I believe that growth comes from constantly learning, taking risks, and stepping outside my comfort zone. My goal isn't just to become a successful developer, but to build something meaningful, inspire others, and prove that age doesn't define what you can achieve.
         </p>
 
         <p>
@@ -75,72 +56,216 @@
             appealing and easy to use.
         </p>
     </div>
-</div>
-
-<div class="projects">
-    <div class="project-title">
-        <h1>My Projects</h1>
-        <p class="text-muted">
-            Here are some of the projects I've worked on.
-        </p>
+    <div class="about-gallery">
+        <div class="about-photo">
+            <img class="about-forest-photo" src="assets/about/forest-portrait.jpg" width="768" height="1024" alt="Wearing sunglasses in a pine grove" loading="lazy">
+        </div>
+        <div class="about-photo">
+            <img src="assets/about/python-demo.jpg" width="960" height="679" alt="Demonstrating Python code to a classroom" loading="lazy">
+        </div>
+        <div class="about-photo">
+            <img src="assets/about/programming-session.jpg" width="960" height="720" alt="Presenting a slide on programming fundamentals" loading="lazy">
+        </div>
+        <div class="about-photo">
+            <img class="about-university-photo" src="assets/about/university-portrait.jpg" width="960" height="1280" alt="Portrait in a blue National University uniform" loading="lazy">
+        </div>
     </div>
+</section>
 
+<section class="education container" id="education" aria-labelledby="education-title">
+    <h2 id="education-title">Education Milestones</h2>
+    <ol class="education-timeline" role="list">
+        <li>
+            <div class="education-card">
+                <div class="education-card-header">
+                    <span class="education-level">Elementary</span>
+                    <span class="education-date">Foundation Years</span>
+                </div>
+                <h3>Antonio Elementary School</h3>
+                <p>Built the early academic habits and curiosity that shaped my learning journey.</p>
+            </div>
+        </li>
+        <li>
+            <div class="education-card">
+                <div class="education-card-header">
+                    <span class="education-level">Junior High</span>
+                    <span class="education-date">2018–2022</span>
+                </div>
+                <h3>Bacolod City National High School</h3>
+                <p>Strengthened my core academic skills and developed consistency through my secondary studies.</p>
+            </div>
+        </li>
+        <li>
+            <div class="education-card">
+                <div class="education-card-header">
+                    <span class="education-level">Senior High School</span>
+                    <span class="education-date">2022–2024</span>
+                </div>
+                <h3>STI West</h3>
+                <p>Deepened my interest in technology and prepared for a more focused path in higher education.</p>
+            </div>
+        </li>
+        <li>
+            <div class="education-card">
+                <div class="education-card-header">
+                    <span class="education-level">College</span>
+                    <span class="education-date">2024–2028</span>
+                </div>
+                <h3>National University Bacolod</h3>
+                <p>Currently pursuing my degree while continuing to build practical projects and technical experience.</p>
+            </div>
+        </li>
+    </ol>
+</section>
+
+<section class="projects container" id="projects" aria-labelledby="projects-title">
+    <h2 id="projects-title">My Projects</h2>
     <div class="project-grid">
-
-        <div class="project-card">
-            <img src="https://placehold.co/600x400" alt="Project 1">
+        <article class="project-card">
+            <img class="project-preview" src="assets/projects/ximo-pos.png" width="1331" height="784" alt="Ximo POS homepage featuring a checkout terminal and payment hardware" loading="lazy">
             <div class="project-info">
-                <h3>Project One</h3>
-                <p>
-                    A simple website built using HTML, CSS, and Bootstrap.
-                </p>
-                <a href="#" target="_blank">View Project</a>
+                <h3>Ximo POS</h3>
+                <p>A point-of-sale system for handling sales at checkout.</p>
             </div>
-        </div>
+        </article>
 
-        <div class="project-card">
-            <img src="https://placehold.co/600x400" alt="Project 2">
+        <article class="project-card">
+            <div class="project-preview" aria-hidden="true">
+                <span class="project-preview-window"></span>
+            </div>
             <div class="project-info">
-                <h3>Project Two</h3>
-                <p>
-                    A responsive web design focused on clean UI and user experience.
-                </p>
-                <a href="#" target="_blank">View Project</a>
+                <h3>ResQHaven</h3>
+                <p>A software project focused on disaster management and response.</p>
             </div>
-        </div>
+        </article>
 
-        <div class="project-card">
-            <img src="https://placehold.co/600x400" alt="Project 3">
+        <article class="project-card">
+            <img class="project-preview" src="assets/projects/ximo-event.png" width="1040" height="644" alt="Ximo Event participant sign-in page" loading="lazy">
             <div class="project-info">
-                <h3>Project Three</h3>
-                <p>
-                    A personal project created to practice my web development skills.
-                </p>
-                <a href="#" target="_blank">View Project</a>
+                <h3>Ximo Event</h3>
+                <p>An event management tool for planning and organizing events.</p>
             </div>
+        </article>
+
+        <article class="project-card">
+            <div class="project-preview" aria-hidden="true">
+                <span class="project-preview-window"></span>
+            </div>
+            <div class="project-info">
+                <h3>E-Bike Management</h3>
+                <p>A system for managing e-bike operations.</p>
+            </div>
+        </article>
+
+        <article class="project-card">
+            <img class="project-preview" src="assets/projects/barangay-balangay.png" width="574" height="318" alt="Barangay Balangay main menu with Continue and New Game options beside a 3D character" loading="lazy">
+            <div class="project-info">
+                <h3>Barangay Balangay</h3>
+                <p>A 3D game where you manage a barangay and work toward a drug-free community.</p>
+            </div>
+        </article>
+
+        <article class="project-card">
+            <div class="project-preview" aria-hidden="true">
+                <i class="bi bi-controller project-preview-controller"></i>
+            </div>
+            <div class="project-info">
+                <h3>Red Herring</h3>
+                <p>A 2D role-playing game.</p>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="certificates container" id="certificates" aria-labelledby="certificates-title">
+    <h2 id="certificates-title">Certificates</h2>
+    <div class="certificate-grid">
+        <article class="certificate-card">
+            <img class="certificate-preview" src="assets/certificates/codefest.jpg" width="3000" height="2076" alt="CODEFEST first runner-up certificate" loading="lazy">
+            <div class="certificate-info">
+                <h3>CODEFEST · 1st Runner-Up</h3>
+                <p>STI West Negros University</p>
+                <p><time datetime="2024-03-15">March 15, 2024</time></p>
+                <a class="certificate-link" href="assets/certificates/codefest.jpg" aria-label="View certificate for CODEFEST">View certificate</a>
+            </div>
+        </article>
+        <article class="certificate-card">
+            <img class="certificate-preview" src="assets/certificates/democratech.jpg" width="855" height="602" alt="DemocraTech Hackathon participation certificate" loading="lazy">
+            <div class="certificate-info">
+                <h3>DemocraTech Hackathon</h3>
+                <p>UPV Komsai.Org</p>
+                <p><time datetime="2025-03-29">March 29</time>–<time datetime="2025-04-11">April 11, 2025</time></p>
+                <a class="certificate-link" href="assets/certificates/democratech.jpg" aria-label="View certificate for DemocraTech Hackathon">View certificate</a>
+            </div>
+        </article>
+        <article class="certificate-card">
+            <img class="certificate-preview" src="assets/certificates/basics-of-design.jpg" width="2000" height="1414" alt="Basics of Design for SHS participation certificate" loading="lazy">
+            <div class="certificate-info">
+                <h3>Basics of Design for SHS</h3>
+                <p>Junior Programmers Club, STI WNU</p>
+                <p><time datetime="2024-04-05">April 5, 2024</time></p>
+                <a class="certificate-link" href="assets/certificates/basics-of-design.jpg" aria-label="View certificate for Basics of Design for SHS">View certificate</a>
+            </div>
+        </article>
+        <article class="certificate-card">
+            <img class="certificate-preview" src="assets/certificates/riskready.png" width="1002" height="687" alt="RiskReady Hackathon participation certificate" loading="lazy">
+            <div class="certificate-info">
+                <h3>RiskReady Hackathon</h3>
+                <p>UPV Komsai.Org</p>
+                <p><time datetime="2026">2026</time></p>
+                <a class="certificate-link" href="assets/certificates/riskready.png" aria-label="View certificate for RiskReady Hackathon">View certificate</a>
+            </div>
+        </article>
+        <article class="certificate-card">
+            <img class="certificate-preview" src="assets/certificates/javascript-essentials.png" width="1185" height="905" alt="JavaScript Programming Essentials course certificate" loading="lazy">
+            <div class="certificate-info">
+                <h3>JavaScript Programming Essentials</h3>
+                <p>IBM Skills Network via Coursera</p>
+                <p><time datetime="2026-05-17">May 17, 2026</time></p>
+                <a class="certificate-link" href="assets/certificates/javascript-essentials.png" aria-label="View certificate for JavaScript Programming Essentials">View certificate</a>
+            </div>
+        </article>
+        <article class="certificate-card">
+            <img class="certificate-preview" src="assets/certificates/node-express.png" width="1200" height="922" alt="Developing Back-End Apps with Node.js and Express course certificate" loading="lazy">
+            <div class="certificate-info">
+                <h3>Developing Back-End Apps with Node.js and Express</h3>
+                <p>IBM Skills Network via Coursera</p>
+                <p><time datetime="2026-06-09">June 9, 2026</time></p>
+                <a class="certificate-link" href="assets/certificates/node-express.png" aria-label="View certificate for Developing Back-End Apps with Node.js and Express">View certificate</a>
+            </div>
+        </article>
+        <article class="certificate-card">
+            <img class="certificate-preview" src="assets/certificates/react-front-end.png" width="1066" height="822" alt="Developing Front-End Apps with React course certificate" loading="lazy">
+            <div class="certificate-info">
+                <h3>Developing Front-End Apps with React</h3>
+                <p>IBM Skills Network via Coursera</p>
+                <p><time datetime="2026-05-23">May 23, 2026</time></p>
+                <a class="certificate-link" href="assets/certificates/react-front-end.png" aria-label="View certificate for Developing Front-End Apps with React">View certificate</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="contact container" id="contact" aria-labelledby="contact-title">
+    <div class="contact-panel">
+        <div class="contact-intro">
+            <h2 id="contact-title">Contact Me</h2>
+            <p>
+                Have a question or want to work together?
+                Feel free to get in touch with me!
+            </p>
+            <p class="contact-location">Based in the Philippines</p>
         </div>
-
+        <!-- Add an href to each contact item. For Email, use mailto: followed by your address. -->
+        <ul class="contact-info" role="list">
+            <li><a class="contact-method"><i class="bi bi-facebook" aria-hidden="true"></i><span>Facebook</span></a></li>
+            <li><a class="contact-method"><i class="bi bi-instagram" aria-hidden="true"></i><span>Instagram</span></a></li>
+            <li><a class="contact-method"><i class="bi bi-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a></li>
+            <li><a class="contact-method"><i class="bi bi-github" aria-hidden="true"></i><span>GitHub</span></a></li>
+            <li><a class="contact-method"><i class="bi bi-envelope" aria-hidden="true"></i><span>Email</span></a></li>
+        </ul>
     </div>
-</div>
-<div class="contact" id="contanct">
-    <div>
-        <h1>Contact Me</h1>
-        <p class="text-muted">
-            Have a question or want to work together?
-            Feel free to get in touch with me!
-        </p>
-    </div>
-
-    <div class="contact-info">
-        <p><strong>Email:</strong> your-email@gmail.com</p>
-        <p><strong>Location:</strong> Philippines</p>
-        <p><strong>Facebook:</strong> Your Facebook Profile</p>
-    </div>
-
-    <a href="mailto:your-email@gmail.com" class="getin">
-        Send Me an Email
-    </a>
-</div>
+</section>
 
 
 
