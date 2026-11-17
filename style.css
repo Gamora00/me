@@ -30,6 +30,20 @@ body {
     background-size: var(--grid-size) var(--grid-size);
 }
 
+@media (hover: hover) and (pointer: fine) {
+    body {
+        cursor: url("assets/cursor-blue.png") 3 2, auto;
+    }
+
+    :where(h1, h2, h3, p) {
+        cursor: text;
+    }
+
+    :where(a[href], button:not(:disabled)) {
+        cursor: pointer;
+    }
+}
+
 .site-nav {
     padding-block: 0.75rem;
     background-color: var(--surface-color);
@@ -82,7 +96,7 @@ body {
     margin-top: 0.5rem;
 }
 
-:where(.site-nav a, .site-nav button, .getin, .contact-method, .certificate-link):focus-visible {
+:where(.site-nav a, .site-nav button, .getin, .contact-method, .certificate-link, .gallery-photo):focus-visible {
     outline: 2px solid var(--text-color);
     outline-offset: 3px;
 }
@@ -99,6 +113,7 @@ body {
 .education,
 .projects,
 .certificates,
+.gallery,
 .contact {
     padding-block: clamp(2.75rem, 5vw, 4.5rem);
 }
@@ -173,6 +188,7 @@ body {
 .education h2,
 .projects h2,
 .certificates h2,
+.gallery h2,
 .contact h2 {
     font-size: 2rem;
     font-weight: 700;
@@ -234,18 +250,21 @@ body {
 }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-    .about-photo img {
+    .about-photo img,
+    .gallery-photo img {
         transition: transform 200ms ease-out;
     }
 
-    .about-photo:hover img {
+    .about-photo:hover img,
+    .gallery-photo:hover img {
         transform: scale(0.95);
     }
 }
 
 .education h2,
 .projects h2,
-.certificates h2 {
+.certificates h2,
+.gallery h2 {
     margin-bottom: clamp(1.5rem, 3vw, 2rem);
 }
 
@@ -478,11 +497,9 @@ img.project-preview {
     background: var(--text-color);
 }
 
-.project-preview-window,
-.project-preview-controller {
-    border: 1px solid var(--text-color);
-    background-color: var(--surface-color);
-    box-shadow: 0 4px 0 rgb(0 0 0 / 12%);
+img.project-preview-poster {
+    object-fit: cover;
+    object-position: center 8%;
 }
 
 .project-preview-window {
@@ -491,7 +508,10 @@ img.project-preview {
     width: min(66%, 14rem);
     aspect-ratio: 5 / 3;
     padding: 0.625rem;
+    border: 1px solid var(--text-color);
     border-radius: 0.625rem;
+    background-color: var(--surface-color);
+    box-shadow: 0 4px 0 rgb(0 0 0 / 12%);
 }
 
 .project-preview-window::before {
@@ -511,16 +531,6 @@ img.project-preview {
     content: "";
 }
 
-.project-preview-controller {
-    display: grid;
-    place-items: center;
-    width: min(45%, 8rem);
-    aspect-ratio: 3 / 2;
-    border-radius: 1rem;
-    font-size: 2.5rem;
-    line-height: 1;
-}
-
 .project-info {
     display: flex;
     flex: 1;
@@ -538,6 +548,46 @@ img.project-preview {
     margin: 0;
     font-size: 0.9375rem;
     line-height: 1.65;
+}
+
+@media (hover: hover) {
+    .project-card:hover {
+        border-color: var(--project-accent);
+    }
+
+    .education-card:hover {
+        border-color: var(--milestone-accent);
+    }
+
+    .project-card:hover,
+    .education-card:hover {
+        box-shadow: 0 12px 28px rgb(0 0 0 / 12%);
+    }
+
+    .education-timeline > li:has(.education-card:hover)::before {
+        box-shadow:
+            0 0 0 3px var(--surface-color),
+            0 0 0 6px color-mix(in srgb, var(--milestone-accent) 45%, transparent);
+    }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .project-card,
+    .education-card {
+        transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
+    }
+
+    .education-timeline > li::before {
+        transition: box-shadow 200ms ease-out;
+    }
+
+    .project-preview {
+        transition: transform 200ms ease-out;
+    }
+
+    .project-card:hover .project-preview {
+        transform: scale(0.97);
+    }
 }
 
 .certificate-card {
@@ -597,6 +647,66 @@ img.project-preview {
     color: var(--muted-color);
 }
 
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+.gallery-photo {
+    display: block;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    background-color: var(--surface-color);
+    cursor: zoom-in;
+}
+
+.gallery-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-portrait img {
+    object-position: center 12%;
+}
+
+.gallery-photo-wide img {
+    object-fit: contain;
+}
+
+@media (max-width: 767.98px) {
+    .hero {
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
+        row-gap: 1.5rem;
+        padding-block: clamp(1.75rem, 5vw, 2.5rem);
+        text-align: center;
+    }
+
+    .hero-role {
+        margin-inline: auto;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.125rem, 8vw, 3rem);
+    }
+
+    .hero-description {
+        max-width: 50ch;
+        margin: 0.875rem auto 1.25rem;
+    }
+
+    .hero .profile {
+        max-width: 23rem;
+        aspect-ratio: 4 / 3;
+        object-position: center 12%;
+    }
+}
+
 @media (min-width: 576px) {
     .project-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -604,6 +714,10 @@ img.project-preview {
 }
 
 @media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     .hero,
     .about-container {
         column-gap: clamp(2rem, 7vw, 6rem);
@@ -672,6 +786,10 @@ img.project-preview {
     .project-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+
+    .gallery-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 991.98px) {
@@ -680,7 +798,7 @@ img.project-preview {
     }
 
     html:has(.site-nav .navbar-collapse.show) {
-        scroll-padding-top: min(21rem, var(--expanded-navbar-limit));
+        scroll-padding-top: min(23.5rem, var(--expanded-navbar-limit));
     }
 
     .site-nav .navbar-collapse.show {
@@ -711,6 +829,7 @@ img.project-preview {
     .education,
     .projects,
     .certificates,
+    .gallery,
     .contact {
         max-width: 1140px;
     }
